@@ -1,8 +1,8 @@
 [global]
-developmentMode = false
+# developmentMode = false
 
 [server]
-enableCORS = false
+# enableCORS = false
 
 [theme]
 
