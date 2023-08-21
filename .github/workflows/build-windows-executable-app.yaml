@@ -189,7 +189,7 @@ jobs:
 
     - name: Compile app with pyinstaller
       run: |
-        pyinstaller --onefile --additional-hooks-dir ./hooks run_app.py --clean
+        pyinstaller --additional-hooks-dir ./hooks run_app.py --clean
 
 
     - name: Write function to cli.py
