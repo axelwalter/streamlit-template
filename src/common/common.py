@@ -21,8 +21,8 @@ except ImportError:
 from src.common.captcha_ import captcha_control
 
 # set these variables according to your project
-APP_NAME = "OpenMS Streamlit App"
-REPOSITORY_NAME = "streamlit-template"
+APP_NAME = "UmetaFlow"
+REPOSITORY_NAME = "umetaflow-gui"
 
 # Detect system platform
 OS_PLATFORM = sys.platform
@@ -108,10 +108,13 @@ def page_setup(page: str = "") -> dict[str, Any]:
         with open("settings.json", "r") as f:
             st.session_state.settings = json.load(f)
 
+    if "local" in sys.argv:
+        st.session_state.settings["online_deployment"] = False
+
     # Set Streamlit page configurations
     st.set_page_config(
         page_title=APP_NAME,
-        page_icon="assets/OpenMS.png",
+        page_icon="assets/umetaflow-logo.png",
         layout="wide",
         initial_sidebar_state="auto",
         menu_items=None,

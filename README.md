@@ -16,7 +16,7 @@ This repository contains a template app for OpenMS workflows in a web applicatio
 
 ## Documentation
 
-Documentation for **users** and **developers** is included as pages in [this template app](https://abi-services.cs.uni-tuebingen.de/streamlit-template/), indicated by the 📖 icon.
+Documentation for **users** and **developers** is included as a page in [this template app](https://abi-services.cs.uni-tuebingen.de/streamlit-template/).
 
 ## References
 

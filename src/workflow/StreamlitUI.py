@@ -880,3 +880,22 @@ class StreamlitUI:
 
     def results_section(self, custom_results_function) -> None:
         custom_results_function()
+
+    def simple_file_uploader(self, key: str, file_type: str, name: str = "") -> None:
+        c1, c2 = st.columns(2)
+        upload = c1.file_uploader(
+            name, file_type, False, help="Save paramters after uploading."
+        )
+        dir_path = Path(self.workflow_dir, "input-files", key)
+        if upload:
+            if dir_path.exists():
+                shutil.rmtree(dir_path)
+            dir_path.mkdir(parents=True, exist_ok=True)
+            path = Path(dir_path, upload.name)
+            with open(path, "wb") as f:
+                f.write(upload.getbuffer())
+        c2.markdown("##")
+        if dir_path.exists():
+            c2.info([p.name for p in dir_path.iterdir()][0])
+        else:
+            c2.warning(f"Not found in workspace: {name}")
